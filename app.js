@@ -40,6 +40,9 @@ const upload = multer({
   }
 }).fields([{ name: 'photo', maxCount: 1 }, { name: 'video', maxCount: 1 }]);
 // Routes
+app.get("/", (req, res) => {
+  res.send("Hello !! Welcome to WhiteDairy App")
+})
 app.use('/api/v1/auth',authUser);
 app.use('/api/v1/users',userRouter);
 app.use('/api/v1/post',upload,postRouter);
